@@ -32,7 +32,13 @@ public class Line {
 		return len1.equals(len2);
 	}
 
-	
+	public int compareTo(Line L) {
+		Double len1 = this.getLength();
+		Double len2 = L.getLength();
+
+		// Inbuilt function compareTo()
+		return len1.compareTo(len2);
+	}
 
 	public static void main(String[] args) {
 		Line L1 = new Line(-7, -4, 17, 6.5);
@@ -50,6 +56,14 @@ public class Line {
 			System.out.println("Length of Line 1 is not equal to Line 2.");
 		}
 
-		
+		// Use case - 3
+		int result2 = L1.compareTo(L2);
+		if (result2 == 0) {
+			System.out.println("Length of Line 1 is equal to Line 2.");
+		} else if (result2 > 0) {
+			System.out.println("Line 1 is longer than Line 2.");
+		} else {
+			System.out.println("Line 1 is smaller than Line 2.");
+		}
 	}
 }

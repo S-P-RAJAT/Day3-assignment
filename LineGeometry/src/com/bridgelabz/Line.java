@@ -24,6 +24,14 @@ public class Line {
 		return Math.round(Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2)) * 1000000d) / 1000000d;
 	}
 
+	public boolean equals(Line L) {
+		Double len1 = this.getLength();
+		Double len2 = L.getLength();
+
+		// Inbuilt function equals()
+		return len1.equals(len2);
+	}
+
 	
 
 	public static void main(String[] args) {
@@ -34,6 +42,14 @@ public class Line {
 		System.out.println("Length of Line 1 = " + L1.getLength() + "\t" + "Length of Line 2 = " + L2.getLength());
 		System.out.println();
 		
+		// Use case - 2
+		boolean result1 = L1.equals(L2);
+		if (result1 == true) {
+			System.out.println("Length of Line 1 is equal to Line 2.");
+		} else {
+			System.out.println("Length of Line 1 is not equal to Line 2.");
+		}
+
 		
 	}
 }
